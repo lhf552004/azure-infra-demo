@@ -17,6 +17,6 @@ resource "azurerm_app_service" "app" {
 
   app_settings = {
     "WEBSITE_RUN_FROM_PACKAGE" = "1"
-    "ENVIRONMENT"      = var.environment
+    "ENVIRONMENT"              = var.environment
   }
 }

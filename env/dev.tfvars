@@ -1,4 +1,4 @@
-resource_group_name = "terraform-dev-rg"
-app_service_name    = "dev-app-service"
-app_service_plan    = "F1"
-environment         = "development"
+resource_group_name   = "terraform-dev-rg"
+frontend_storage_name = "dev-frontend-storage"
+backend_app_name      = "dev-backend-api-service"
+environment           = "development"
