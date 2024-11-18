@@ -9,9 +9,9 @@ Create sensitive-values.tfvars, follow sensitive-values.tfvars.example
 ```
 terraform fmt -recursive
 
-terraform validate
-
 terraform init
+
+terraform validate
 
 terraform plan -var-file="dev.tfvars" -var-file="sensitive-values.tfvars"
 
