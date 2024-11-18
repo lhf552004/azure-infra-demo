@@ -7,14 +7,17 @@ resource "azurerm_service_plan" "plan" {
   os_type  = var.os_type
 }
 
-resource "azurerm_app_service" "app" {
+resource "azurerm_linux_web_app" "app" {
   name                = var.name
   location            = var.location
   resource_group_name = var.resource_group_name
-  app_service_plan_id = azurerm_service_plan.plan.id
+  service_plan_id     = azurerm_service_plan.plan.id
+
+  site_config {
+    always_on        = true
+  }
 
   app_settings = {
-    "WEBSITE_RUN_FROM_PACKAGE" = "1"
-    "ENVIRONMENT"              = var.environment
+    "APP_ENV" = var.environment
   }
 }
