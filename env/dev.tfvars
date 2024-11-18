@@ -1,4 +1,6 @@
 resource_group_name   = "terraform-dev-rg"
-frontend_storage_name = "dev-frontend-storage"
-backend_app_name      = "dev-backend-api-service"
+frontend_storage_name = "devfrontendstorage"
+backend_app_name      = "devbackendapiservice"
 environment           = "development"
+key_vault_name        = "my-key-vault1"
+database_name         = "my-database"

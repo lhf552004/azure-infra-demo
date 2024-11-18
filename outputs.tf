@@ -7,5 +7,6 @@ output "backend_app_service_name" {
 }
 
 output "sql_connection_string" {
-  value = module.sql_database.connection_string
+  value     = module.sql_database.connection_string
+  sensitive = true
 }

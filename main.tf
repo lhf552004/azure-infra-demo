@@ -27,27 +27,18 @@ module "sql_database" {
   source              = "./modules/sql_database"
   resource_group_name = module.resource_group.name
   location            = module.resource_group.location
-  admin_username      = data.azurerm_key_vault_secret.sql_admin_username.value
-  admin_password      = data.azurerm_key_vault_secret.sql_admin_password.value
-  database_name       = "my-database"
-}
+  admin_username      = module.key_vault_secrets.sql_admin_username
+  admin_password      = module.key_vault_secrets.sql_admin_password
+  database_name       = var.database_name
 
-data "azurerm_key_vault_secret" "sql_admin_password" {
-  name         = "sql-admin-password"
-  key_vault_id = var.key_vault_id
-}
-
-data "azurerm_key_vault_secret" "sql_admin_username" {
-  name         = "sql-admin-username"
-  key_vault_id = var.key_vault_id
 }
 
 module "key_vault_secrets" {
-  source       = "./modules/key_vault_secrets"
-  key_vault_id = var.key_vault_id
+  source              = "./modules/key_vault_secrets"
+  key_vault_name      = var.key_vault_name
+  resource_group_name = module.resource_group.name
+  location            = module.resource_group.location
 
-  secrets = {
-    sql-admin-username = var.sql_admin_username
-    sql-admin-password = var.sql_admin_password
-  }
+  sql_admin_username = var.sql_admin_username
+  sql_admin_password = var.sql_admin_password
 }

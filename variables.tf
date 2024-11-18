@@ -26,16 +26,17 @@ variable "sql_admin_password" {
   description = "SQL admin password"
 }
 
-variable "storage_access_key" {
-  description = "Storage access key"
-}
-
 variable "environment" {
   description = "Environment (e.g., dev, test, prod)"
   default     = "dev"
 }
 
-variable "key_vault_id" {
-  description = "The ID of the Azure Key Vault"
+variable "key_vault_name" {
+  description = "The name of the Azure Key Vault"
+  type        = string
+}
+
+variable "database_name" {
+  description = "The name of the database"
   type        = string
 }

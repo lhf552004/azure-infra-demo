@@ -3,8 +3,8 @@ resource "azurerm_service_plan" "plan" {
   location            = var.location
   resource_group_name = var.resource_group_name
 
-  sku_name            = var.sku_name
-  os_type             = var.os_type
+  sku_name = var.sku_name
+  os_type  = var.os_type
 }
 
 resource "azurerm_app_service" "app" {

@@ -1,9 +1,24 @@
-variable "key_vault_id" {
+# modules/key_vault_secrets/variables.tf
+variable "key_vault_name" {
+  description = "The name of the Azure Key Vault"
   type        = string
-  description = "The ID of the Azure Key Vault where secrets will be stored."
 }
 
-variable "secrets" {
-  type        = map(string)
-  description = "A map of secret names to values to store in the Key Vault."
+variable "sql_admin_password" {
+  description = "SQL admin password"
+  type        = string
+  sensitive   = true
+}
+
+variable "sql_admin_username" {
+  description = "SQL admin username"
+  type        = string
+}
+
+variable "resource_group_name" {
+  description = "Name of the resource group"
+}
+
+variable "location" {
+  description = "Azure location"
 }

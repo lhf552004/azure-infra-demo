@@ -4,16 +4,19 @@
 
 Create sensitive-values.tfvars, follow sensitive-values.tfvars.example
 
+```
+terraform fmt -recursive
+```
+
+```
+terraform validate
+```
 ## Run
 
 ```
-terraform fmt -recursive
-
 terraform init
 
-terraform validate
+terraform plan -var-file="env/dev.tfvars" -var-file="sensitive-values.tfvars"
 
-terraform plan -var-file="dev.tfvars" -var-file="sensitive-values.tfvars"
-
-terraform apply -var-file="dev.tfvars" -var-file="sensitive-values.tfvars"
+terraform apply -var-file="env/dev.tfvars" -var-file="sensitive-values.tfvars"
 ```

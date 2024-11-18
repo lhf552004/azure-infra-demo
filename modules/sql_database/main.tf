@@ -15,5 +15,6 @@ resource "azurerm_sql_database" "sql_database" {
 }
 
 output "connection_string" {
-  value = azurerm_mssql_server.sql_server.administrator_login
+  value     = azurerm_mssql_server.sql_server.administrator_login
+  sensitive = true
 }
