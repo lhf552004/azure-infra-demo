@@ -1,5 +1,5 @@
 variable "name" {
-  description = "Name of the App Service"
+  description = "Name of the storage account"
 }
 
 variable "resource_group_name" {
@@ -8,8 +8,4 @@ variable "resource_group_name" {
 
 variable "location" {
   description = "Azure location"
-}
-
-variable "environment" {
-  description = "Environment (e.g., dev, test, prod)"
 }
