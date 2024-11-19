@@ -40,3 +40,8 @@ variable "database_name" {
   description = "The name of the database"
   type        = string
 }
+
+variable "sku_name" {
+  description = "Sku name"
+  type        = string
+}

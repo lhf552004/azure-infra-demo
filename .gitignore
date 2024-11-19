@@ -12,3 +12,5 @@ sensitive-values.tfvars
 
 # Optional: Ignore variables files if they contain sensitive data
 *.tfvars
+
+tfplan
